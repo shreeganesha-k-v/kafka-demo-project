@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: Kafka-demo
+
+  kafka:
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+    consumer:
+      auto-offset-reset: earliest
+      group-id: kafka-file-service
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+    bootstrap-servers: localhost:9092
+
+kafka:
+  topic:
+    name: file-topic
+  consumer:
+    group-id: file-service-consumer
+
+file:
+  input:
+    path: C:\Users\kvvvvshr\Desktop\notepad files\File.txt
+  output:
+    path: C:\Users\kvvvvshr\Desktop\notepad files\Output.txt
+
+server:
+  port: 8090
